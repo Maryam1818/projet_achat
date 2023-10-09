@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('git') {
             steps {
-               bat "rmdir  /s /q TicketBookingServiceJunitTesting"
+               bat "rmdir  /s /q projet_timesheet"
                 bat "git clone https://github.com/Maryam1818/projet_timesheet.git"
               
             }
