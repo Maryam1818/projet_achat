@@ -1,7 +1,13 @@
 pipeline {
     agent any
     stages {
-     
+      stage('maven clean') {
+            steps {
+                sh 'mvn clean -f projet_achat'
+        	sh 'mvn -v'
+		}
+        }
+       
         stage('git') {
             steps {
                 sh 'rmdir  /s /q projet_achat'
@@ -9,13 +15,7 @@ pipeline {
               
             }
         }
-        stage('maven clean') {
-            steps {
-                sh 'mvn clean -f'
-        	sh 'mvn -v'
-			}
-        }
-       
+      
         }
        
     }
