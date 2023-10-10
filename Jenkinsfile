@@ -9,8 +9,13 @@ pipeline {
         }
        stage('maven clean compile') {
             steps { 
-               sh'mvn clean'
-	       sh'mvn compile'
+               sh'mvn clean compile'
+		}
+        }
+	      stage('maven sonarqube') {
+            steps { 
+                    sh 'mvn sonar:sonar -Dsonar.host.url=http://192.168.33.10:9000 -Dsonar.login=sonar'
+                
 		}
         }
         }
