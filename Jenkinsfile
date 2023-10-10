@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage("Build") {
+			steps {
+				sh 'mvn -v'
+			}
+        }
         stage('git') {
             steps {
                 sh "rmdir  /s /q projet_achat"
