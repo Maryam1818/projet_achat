@@ -1,6 +1,7 @@
 pipeline {
     agent any
     stages {
+	    
       stage('maven clean') {
             steps {
                 sh 'mvn clean -f projet_achat'
