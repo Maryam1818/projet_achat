@@ -9,7 +9,7 @@ pipeline {
         }
        stage('maven clean compile') {
             steps { 
-               sh'mvn clean compile'
+               sh'mvn compile'
 		}
         }
 	      stage('maven sonarqube') {
