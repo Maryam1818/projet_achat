@@ -10,10 +10,14 @@ pipeline {
 	stage('compiling') {
             steps { 
 		    sh 'mvn clean' 
-		    sh 'mvn compile'
 		}
         }
-	
+	stage('SONARQUBE') {
+            steps {
+                sh'mvn sonar:sonar -Dsonar.host.url=http://192.168.33.10:9000 -Dsonar.login=sonar'
+            }
+        }
+
 	}
     }
 
