@@ -10,6 +10,7 @@ pipeline {
 	stage('compiling') {
             steps { 
 		    sh 'mvn clean' 
+		    sh 'mvn compile'
 		}
         }
 	
